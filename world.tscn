@@ -1,17 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://mlobb6austas"]
+[gd_scene load_steps=10 format=3 uid="uid://mlobb6austas"]
 
 [ext_resource type="PackedScene" uid="uid://f3u2c5cdrxdo" path="res://player/player.tscn" id="1_2nkik"]
 [ext_resource type="Script" path="res://world.gd" id="1_nfknu"]
-[ext_resource type="PackedScene" uid="uid://cmua6wr0faub" path="res://world/level_one.tscn" id="6_x5mwl"]
+[ext_resource type="PackedScene" uid="uid://bds1p2hjccya0" path="res://ui/shield_ui.tscn" id="5_s4qql"]
+[ext_resource type="PackedScene" uid="uid://dedq53g71qd7e" path="res://world/level_multi.tscn" id="6_y7tu1"]
+[ext_resource type="PackedScene" uid="uid://bof4tmoorln01" path="res://enemies/boss_enemy.tscn" id="7_yct1s"]
 [ext_resource type="PackedScene" uid="uid://duwanatqpdoq5" path="res://ui/health_meter.tscn" id="8_2qica"]
+[ext_resource type="PackedScene" uid="uid://bbmr1g3dpy5u0" path="res://enemies/boss_enemy_scorpion.tscn" id="8_j08rq"]
 [ext_resource type="PackedScene" uid="uid://cm6kgub3nktqd" path="res://menus/pause_menu.tscn" id="9_1ebi7"]
 [ext_resource type="PackedScene" uid="uid://ds8rmiqoroe68" path="res://ui/missile_ui.tscn" id="10_3p06u"]
 
 [node name="World" type="Node2D"]
+position = Vector2(0, -1)
 script = ExtResource("1_nfknu")
-
-[node name="Player" parent="." instance=ExtResource("1_2nkik")]
-position = Vector2(552, 32)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -26,10 +27,42 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="MissileUI" parent="UI" instance=ExtResource("10_3p06u")]
+visible = false
 offset_left = 3.0
 offset_top = 17.0
 offset_right = 16.0
 offset_bottom = 27.0
 metadata/_edit_use_anchors_ = true
 
-[node name="LevelOne" parent="." instance=ExtResource("6_x5mwl")]
+[node name="ShieldUI" parent="UI" instance=ExtResource("5_s4qql")]
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 16.0
+offset_bottom = 26.0
+
+[node name="LevelMulti" parent="." instance=ExtResource("6_y7tu1")]
+
+[node name="BossEnemy" parent="." instance=ExtResource("7_yct1s")]
+position = Vector2(226, -229)
+targets = Array[NodePath]([NodePath("../BossTarget"), NodePath("../BossTarget2"), NodePath("../BossTarget3"), NodePath("../BossTarget4"), NodePath("../BossTarget5")])
+
+[node name="BossTarget" type="Marker2D" parent="."]
+position = Vector2(57, -232)
+
+[node name="BossTarget2" type="Marker2D" parent="."]
+position = Vector2(124, -187)
+
+[node name="BossTarget3" type="Marker2D" parent="."]
+position = Vector2(404, -260)
+
+[node name="BossTarget4" type="Marker2D" parent="."]
+position = Vector2(355, -203)
+
+[node name="BossTarget5" type="Marker2D" parent="."]
+position = Vector2(433, -191)
+
+[node name="BossEnemyScorpion" parent="." instance=ExtResource("8_j08rq")]
+position = Vector2(43, -120)
+
+[node name="Player" parent="." instance=ExtResource("1_2nkik")]
+position = Vector2(174, -113)

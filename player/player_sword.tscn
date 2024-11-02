@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cri5tnw31kie7"]
+
+[ext_resource type="Script" path="res://player/player_sword.gd" id="1_13tqo"]
+[ext_resource type="Texture2D" uid="uid://besjti2rreyaq" path="res://player/saber_blade.png" id="1_c2vy3"]
+[ext_resource type="PackedScene" uid="uid://cko0f8mmxn31b" path="res://collisions/hitbox.tscn" id="3_o0cjp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0h1d6"]
+load_path = "res://.godot/imported/saber_handle.png-3ab21aac3c41e803e0aeb3d15d721ffa.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pebtb"]
+size = Vector2(241, 6)
+
+[node name="PlayerSword" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_13tqo")
+
+[node name="Sword" type="Node2D" parent="."]
+rotation = -1.5708
+
+[node name="handle" type="Sprite2D" parent="Sword"]
+texture = SubResource("CompressedTexture2D_0h1d6")
+
+[node name="blade" type="Sprite2D" parent="Sword"]
+texture = ExtResource("1_c2vy3")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_o0cjp")]
+collision_mask = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -36)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_pebtb")

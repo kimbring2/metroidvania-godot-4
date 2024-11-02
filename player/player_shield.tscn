@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ditlrlj72huub"]
+
+[ext_resource type="Texture2D" uid="uid://7urhotlofyir" path="res://player/shield.png" id="1_k3dfn"]
+[ext_resource type="Script" path="res://player/player_shield.gd" id="1_ox6rt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dcksn"]
+radius = 225.0
+height = 500.0
+
+[node name="PlayerShield" type="Area2D"]
+scale = Vector2(0.02, 0.02)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_ox6rt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 0)
+texture = ExtResource("1_k3dfn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dcksn")

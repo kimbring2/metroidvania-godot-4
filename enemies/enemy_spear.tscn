@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs6a7i50nflkd"]
+
+[ext_resource type="Texture2D" uid="uid://b4f3knqv3fkf3" path="res://enemies/enemy_spear.png" id="1_qm0bd"]
+[ext_resource type="PackedScene" uid="uid://cko0f8mmxn31b" path="res://collisions/hitbox.tscn" id="2_dfxs3"]
+
+[node name="EnemySpear" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qm0bd")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_dfxs3")]
+collision_mask = 16
+
+[node name="Hitbox_EnemySpear" type="CollisionPolygon2D" parent="Hitbox"]
+position = Vector2(138, 0)
+rotation = 1.57952
+polygon = PackedVector2Array(-3.50244, 57.0327, -9.18291, -20.9207, -7.28771, -32.9377, -2.37516, -42.9809, 16.4932, -58.1461, 13.5631, -50.1203, 12.6504, -40.1119, 14.6853, -36.1295, 14.7202, -32.1297, 8.85131, -17.0779, 8.1655, 18.9295, 6.40119, 45.9459, 4.49726, 56.9629)

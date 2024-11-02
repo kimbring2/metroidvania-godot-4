@@ -44,6 +44,7 @@ func crawling_state(delta):
 			var floor_normal = floor_cast.get_collision_normal()
 			rotation = floor_normal.rotated(deg_to_rad(90)).angle()
 
+
 func falling_state(delta):
 	animated_sprite_2d.play("fall")
 	rotation_degrees += crawling_direction * spin_speed * delta
@@ -51,9 +52,10 @@ func falling_state(delta):
 	if floor_cast.is_colliding() or wall_cast.is_colliding():
 		state = crawling_state
 
+
 func _on_hurtbox_hurt(hitbox, damage):
 	stats.health -= damage
 
 func _on_stats_no_health():
 	queue_free()
-	Utils.instantiate_scene_on_level(EnemyDeathEffectScene, global_position)
+	Utils.instantiate_scene_on_level(EnemyDeathEffectScene, global_position, 0.0, Vector2(1.0, 1.0))

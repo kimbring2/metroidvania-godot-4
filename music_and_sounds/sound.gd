@@ -12,6 +12,10 @@ var sounds_path = "res://music_and_sounds/"
 @export var powerup : AudioStream
 @export var step : AudioStream
 @export var unpause : AudioStream
+@export var sword_attack : AudioStream
+@export var spear_swing : AudioStream
+@export var spear_ground_attack : AudioStream
+@export var shield_defense : AudioStream
 
 @onready var sound_players = get_children()
 
@@ -23,4 +27,5 @@ func play(sound_stream, pitch_scale = 1.0, volume_db = 0.0):
 			sound_player.stream = sound_stream
 			sound_player.play()
 			return
+			
 	print("Too many sounds playing at once")

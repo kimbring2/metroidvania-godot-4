@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://lv7o1nxgoepu"]
+[gd_scene load_steps=4 format=3 uid="uid://lv7o1nxgoepu"]
 
 [ext_resource type="Script" path="res://music_and_sounds/music.gd" id="1_0g2eh"]
 [ext_resource type="AudioStream" uid="uid://byak8mvfofkco" path="res://music_and_sounds/music.ogg" id="2_aaufc"]
+[ext_resource type="AudioStream" uid="uid://ev22gyjscxvd" path="res://music_and_sounds/Eternal_Ashes_V2_NoVocals_FadeOut.wav" id="3_0llpe"]
 
 [node name="Music" type="Node"]
 script = ExtResource("1_0g2eh")
 main_theme = ExtResource("2_aaufc")
+battle_theme = ExtResource("3_0llpe")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 bus = &"Music"

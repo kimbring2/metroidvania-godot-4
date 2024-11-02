@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://dydsx2hulr1o0"]
+
+[ext_resource type="Texture2D" uid="uid://t5ttaj7a5oeo" path="res://effects/[White] Slash Medium.png" id="1_8tq6l"]
+[ext_resource type="Texture2D" uid="uid://8thyqyl6pens" path="res://effects/[White] Slash Thick.png" id="1_t81yn"]
+[ext_resource type="Script" path="res://effects/effect.gd" id="2_16jbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4any"]
+atlas = ExtResource("1_t81yn")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v5dq"]
+atlas = ExtResource("1_t81yn")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlepe"]
+atlas = ExtResource("1_t81yn")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u2j2"]
+atlas = ExtResource("1_t81yn")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjop4"]
+atlas = ExtResource("1_8tq6l")
+region = Rect2(0, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdfxy"]
+atlas = ExtResource("1_8tq6l")
+region = Rect2(512, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djs3a"]
+atlas = ExtResource("1_8tq6l")
+region = Rect2(1024, 1024, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3pxn"]
+atlas = ExtResource("1_8tq6l")
+region = Rect2(1536, 1024, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbtek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4any")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v5dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlepe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u2j2")
+}],
+"loop": true,
+"name": &"spear",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjop4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdfxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djs3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3pxn")
+}],
+"loop": false,
+"name": &"sword",
+"speed": 8.0
+}]
+
+[node name="AttackEffect" type="AnimatedSprite2D"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_vbtek")
+animation = &"sword"
+autoplay = "sword"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_16jbk")

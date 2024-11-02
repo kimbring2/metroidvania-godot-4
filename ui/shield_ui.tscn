@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bds1p2hjccya0"]
+
+[ext_resource type="Script" path="res://ui/shield_ui.gd" id="1_ejncf"]
+[ext_resource type="Texture2D" uid="uid://dh5lx602v51o6" path="res://ui/player_shield_icon.png" id="2_ovn0u"]
+
+[node name="ShieldUI" type="HBoxContainer"]
+offset_right = 13.0
+offset_bottom = 10.0
+theme_override_constants/separation = 0
+script = ExtResource("1_ejncf")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_ovn0u")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "1"
+vertical_alignment = 2

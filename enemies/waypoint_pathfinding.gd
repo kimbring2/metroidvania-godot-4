@@ -9,7 +9,12 @@ var pathfinding_next_position: Vector2
 @onready var ray_cast_2d = $RayCast2D
 
 func _physics_process(delta):
-	if not MainInstances.player is Node2D: return
+	#print("_physics_process()")
+	#print("MainInstances.player: ", MainInstances.player)
+	
+	if not MainInstances.player is Node2D: 
+		return
+		
 	target = MainInstances.player.center
 	
 	if can_see_target(global_position):
@@ -27,9 +32,14 @@ func _physics_process(delta):
 		else:
 			if not can_see_target(global_position):
 				waypoints.append(target.global_position)
+	
+	
 
 func can_see_target(from):
+	#target = MainInstances.player.center
+	
 	ray_cast_2d.global_position = from
-	ray_cast_2d.target_position = target.global_position - from
+	ray_cast_2d.target_posdddition = target.global_position - from
 	ray_cast_2d.force_raycast_update()
+	
 	return not ray_cast_2d.is_colliding()

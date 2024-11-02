@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbtjh0rsst6bx"]
+[gd_scene load_steps=16 format=3 uid="uid://bbtjh0rsst6bx"]
 
 [ext_resource type="Script" path="res://music_and_sounds/sound.gd" id="1_c3oma"]
 [ext_resource type="AudioStream" uid="uid://di8ask5r1emtg" path="res://music_and_sounds/bullet.wav" id="2_qjmp7"]
@@ -11,6 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://buu4bioyjl1cm" path="res://music_and_sounds/powerup.wav" id="9_cxpo6"]
 [ext_resource type="AudioStream" uid="uid://o8o4lbbfrj0q" path="res://music_and_sounds/step.wav" id="10_i41wo"]
 [ext_resource type="AudioStream" uid="uid://ct0to6lhwo3ae" path="res://music_and_sounds/unpause.wav" id="11_dejtr"]
+[ext_resource type="AudioStream" uid="uid://dxvbjs2v458su" path="res://music_and_sounds/sword_attack.wav" id="12_prm6n"]
+[ext_resource type="AudioStream" uid="uid://bd8efq2iji1dl" path="res://music_and_sounds/scifi_sword_whoosh_F_09.wav" id="13_3pv6w"]
+[ext_resource type="AudioStream" uid="uid://2af6w3buuwk2" path="res://music_and_sounds/spear_swing.wav" id="13_b3v4u"]
+[ext_resource type="AudioStream" uid="uid://dbfjhi36q53ui" path="res://music_and_sounds/shield_defense.wav" id="15_vb8hm"]
 
 [node name="Sound" type="Node"]
 script = ExtResource("1_c3oma")
@@ -24,9 +28,12 @@ pause = ExtResource("8_38okd")
 powerup = ExtResource("9_cxpo6")
 step = ExtResource("10_i41wo")
 unpause = ExtResource("11_dejtr")
+sword_attack = ExtResource("12_prm6n")
+spear_swing = ExtResource("13_b3v4u")
+spear_ground_attack = ExtResource("13_3pv6w")
+shield_defense = ExtResource("15_vb8hm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Sounds"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 bus = &"Sounds"
@@ -71,4 +78,13 @@ bus = &"Sounds"
 bus = &"Sounds"
 
 [node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"
+
+[node name="AudioStreamPlayer17" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"
+
+[node name="AudioStreamPlayer18" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"
+
+[node name="AudioStreamPlayer19" type="AudioStreamPlayer" parent="."]
 bus = &"Sounds"

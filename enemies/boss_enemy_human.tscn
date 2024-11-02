@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dylr8e4cuaj55"]
+
+[node name="boss_enemy_human" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,6 +1,11 @@
 extends Powerup
 
+
 func pickup():
 	super()
-	PlayerStats.max_missiles += 3
-	PlayerStats.missiles = PlayerStats.max_missiles
+	PlayerStats.missiles += 3
+
+
+func _on_body_entered(body):
+	if body.current_weapon_mode[0] == body.WeaponMode.BLASTER:
+		super(body)
